@@ -8,5 +8,10 @@ print()
 print(output)
 
 translator = Translator()
+<<<<<<< HEAD
 print(translator.translate(output).text)
 
+=======
+print(translator.translate(output))
+print(type(translator.translate(output)))
+>>>>>>> 51408fe21a6608e0227262b250abc3f779d9a894
