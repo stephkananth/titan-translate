@@ -43,10 +43,7 @@ pipe = Popen('tesseract opencv_frame.png stdout', shell=True, stdout=PIPE).stdou
 output = ignoreError(pipe.read().decode("utf-8").strip())
 
 translator = Translator()
-<<<<<<< HEAD
-print(translator.translate(output))
-print(type(translator.translate(output)))
-
+print(translator.translate(output).text)
 
 #Adding text to image and pulling it up
 import numpy as np
@@ -58,6 +55,4 @@ cv2.putText(img,'Testing testing testing',(40,130), font, 1, (225,255,225), 2, c
 cv2.imshow('image',img)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
-=======
-print(translator.translate(output).text)
->>>>>>> 892722eeb2f13df8019a5f5c4a87e820ef54ce4e
+
