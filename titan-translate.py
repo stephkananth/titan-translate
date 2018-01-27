@@ -10,5 +10,3 @@ print(output)
 translator = Translator()
 print(translator.translate(output))
 print(type(translator.translate(output)))
-
-
