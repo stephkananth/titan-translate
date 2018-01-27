@@ -43,13 +43,15 @@ pipe = Popen('tesseract opencv_frame.png stdout', shell=True, stdout=PIPE).stdou
 output = ignoreError(pipe.read().decode("utf-8").strip())
 
 translator = Translator()
-print(translator.translate(output).text)
+print("HI")
+display_text = translator.translate(output).text
+print(display_text)
 
 #Adding text to image and pulling it up
 import numpy as np
 img = cv2.imread('opencv_frame.png',cv2.IMREAD_COLOR)
 font = cv2.FONT_HERSHEY_SIMPLEX
-cv2.putText(img,'Testing testing testing',(40,130), font, 1, (225,255,225), 2, cv2.LINE_AA)
+cv2.putText(img,display_text,(40,130), font, 1, (225,255,225), 2, cv2.LINE_AA)
 
 
 cv2.imshow('image',img)
