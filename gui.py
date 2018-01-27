@@ -3,6 +3,7 @@
 
 from tkinter import *
 
+
 ####################################
 # customize these functions
 ####################################
@@ -11,20 +12,25 @@ def init(data):
     # load data.xyz as appropriate
     pass
 
+
 def mousePressed(event, data):
     # use event.x and event.y
     pass
+
 
 def keyPressed(event, data):
     # use event.char and event.keysym
     pass
 
+
 def timerFired(data):
     pass
+
 
 def redrawAll(canvas, data):
     # draw in canvas
     pass
+
 
 ####################################
 # use the run function as-is
@@ -36,7 +42,7 @@ def run(width=300, height=300):
         canvas.create_rectangle(0, 0, data.width, data.height,
                                 fill='white', width=0)
         redrawAll(canvas, data)
-        canvas.update()    
+        canvas.update()
 
     def mousePressedWrapper(event, canvas, data):
         mousePressed(event, data)
@@ -51,12 +57,14 @@ def run(width=300, height=300):
         redrawAllWrapper(canvas, data)
         # pause, then call timerFired again
         canvas.after(data.timerDelay, timerFiredWrapper, canvas, data)
+
     # Set up data and call init
     class Struct(object): pass
+
     data = Struct()
     data.width = width
     data.height = height
-    data.timerDelay = 100 # milliseconds
+    data.timerDelay = 100  # milliseconds
     init(data)
     # create the root and the canvas
     root = Tk()
@@ -64,12 +72,13 @@ def run(width=300, height=300):
     canvas.pack()
     # set up events
     root.bind("<Button-1>", lambda event:
-                            mousePressedWrapper(event, canvas, data))
+    mousePressedWrapper(event, canvas, data))
     root.bind("<Key>", lambda event:
-                            keyPressedWrapper(event, canvas, data))
+    keyPressedWrapper(event, canvas, data))
     timerFiredWrapper(canvas, data)
     # and launch the app
     root.mainloop()  # blocks until window is closed
     print("bye!")
+
 
 run(400, 200)
