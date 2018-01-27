@@ -43,10 +43,5 @@ def ignoreError(s):
 pipe = Popen('tesseract opencv_frame.png stdout', shell=True, stdout=PIPE).stdout
 output = ignoreError(pipe.read().decode("utf-8").strip())
 
-
-print("HERE")
-print(output)
-
 translator = Translator()
-print(translator.translate(output))
-print(type(translator.translate(output)))
+print(translator.translate(output).text)
