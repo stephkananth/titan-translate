@@ -7,6 +7,7 @@ cv2.namedWindow("test")
 img_counter = 0
 
 while True:
+
     ret, frame = cam.read()
     cv2.imshow("test", frame)
     if not ret:
@@ -23,6 +24,7 @@ while True:
         cv2.imwrite(img_name, frame)
         print("written!".format(img_name))
         img_counter += 1
+
 
 
 cam.release()
@@ -54,6 +56,16 @@ font = cv2.FONT_HERSHEY_SIMPLEX
 cv2.putText(img,display_text,(40,130), font, 1, (225,255,225), 2, cv2.LINE_AA)
 
 
+
 cv2.imshow('image',img)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
+
+
+#SOUND
+from gtts import gTTS
+import os
+tts = gTTS(text=display_text, lang='en')
+tts.save("good.mp3")
+os.system("mpg321 good1.mp3")
+#SOUND
