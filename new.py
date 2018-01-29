@@ -1,5 +1,7 @@
-import cv2
 import unicodedata
+
+import cv2
+
 cam = cv2.VideoCapture(0)
 
 cv2.namedWindow("test")
@@ -14,24 +16,27 @@ while True:
         break
     k = cv2.waitKey(1)
 
-    if k%256 == 27:
+    if k % 256 == 27:
         # ESC pressed
         print("Escape hit, closing...")
         break
-    elif k%256 == 32:
+    elif k % 256 == 32:
         # SPACE pressed
         img_name = "opencv_frame.png"
         cv2.imwrite(img_name, frame)
         print("written!".format(img_name))
         img_counter += 1
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> b205cdd9422335dcf111bdcecd9494b623805546
 cam.release()
 
 cv2.destroyAllWindows()
 
-#TitanTranslateFile
+# TitanTranslateFile
 from subprocess import Popen, PIPE
 from googletrans import Translator
 
@@ -41,6 +46,7 @@ def ignoreError(s):
         return (unicodedata.normalize('NFKD', s).encode('ASCII', 'ignore').decode('utf-8', 'ignore'))
     return s
 
+
 pipe = Popen('tesseract opencv_frame.png stdout', shell=True, stdout=PIPE).stdout
 output = ignoreError(pipe.read().decode("utf-8").strip())
 
@@ -49,15 +55,18 @@ print("HI")
 display_text = translator.translate(output).text
 print(display_text)
 
-#Adding text to image and pulling it up
-import numpy as np
-img = cv2.imread('opencv_frame.png',cv2.IMREAD_COLOR)
+# Adding text to image and pulling it up
+
+img = cv2.imread('opencv_frame.png', cv2.IMREAD_COLOR)
 font = cv2.FONT_HERSHEY_SIMPLEX
-cv2.putText(img,display_text,(40,130), font, 1, (225,255,225), 2, cv2.LINE_AA)
+cv2.putText(img, display_text, (40, 130), font, 1, (225, 255, 225), 2, cv2.LINE_AA)
 
-
+<<<<<<< HEAD
 
 cv2.imshow('image',img)
+=======
+cv2.imshow('image', img)
+>>>>>>> b205cdd9422335dcf111bdcecd9494b623805546
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 
