@@ -23,8 +23,7 @@ Writeup:
     We also attempted to have the program speak the translated text using Google Text to Speech
     (https://pypi.python.org/pypi/gTTS), which would save the speech as an mp3 and then play it back for the
     user while the translated text was being displayed, but it unreliable and only worked sporadically, so we
-    decided that it was not critical to the program and reverted back to a more reliable version of the
-    program.
+    decided that it was not critical to the program and reverted back to a more reliable version.
 
 Sources:
 
