@@ -25,6 +25,9 @@ Writeup:
     to the program and reverted back to a more reliable version of the program.
 
 Sources:
+
 OpenCV: https://opencv-python-tutroals.readthedocs.io/en/latest/
+
 Tesseract: https://github.com/tesseract-ocr/tesseract
+
 Google Translate: https://pypi.python.org/pypi/googletrans
