@@ -31,7 +31,7 @@
             <br><br>
             <h1 class="header center blue-grey-text text-lighten-2">Titan Translate</h1>
             <div class="row center">
-                <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+                <h5 class="header col s12 bold">translate any text with your webcam</h5>
             </div>
             <div class="row center">
                 <a href="https://github.com/stephkananth/titan-translate" id="download-button"
@@ -48,18 +48,14 @@
         <div class="row">
             <div class="col s12 center">
                 <h3><i class="mdi-content-send brown-text"></i></h3>
-                <h4>Writeup</h4>
-                <p class="left-align light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque
-                    id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut
-                    ultricies eros. Maecenas eros justo, ullamcorper a sapien id, viverra ultrices eros. Morbi sem
-                    neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam eleifend sollicitudin diam, eu
-                    mattis nisl maximus sed. Nulla imperdiet semper molestie. Morbi massa odio, condimentum sed ipsum
-                    ac, gravida ultrices erat. Nullam eget dignissim mauris, non tristique erat. Vestibulum ante ipsum
-                    primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
+                <h4>Video Demonstration</h4>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/pD32LKi5r9E?rel=0" frameborder="0"
+                        allow="autoplay; encrypted-media" allowfullscreen></iframe>
             </div>
         </div>
     </div>
 </div>
+
 
 <div id="index-banner" class="parallax-container">
     <div class="section no-pad-bot">
@@ -67,20 +63,37 @@
     </div>
 </div>
 
-
 <div class="container">
     <div class="section">
         <div class="row">
             <div class="col s12 center">
                 <h3><i class="mdi-content-send brown-text"></i></h3>
-                <h4>Video Demonstration</h4>
-                <p class="left-align light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque
-                    id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut
-                    ultricies eros. Maecenas eros justo, ullamcorper a sapien id, viverra ultrices eros. Morbi sem
-                    neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam eleifend sollicitudin diam, eu
-                    mattis nisl maximus sed. Nulla imperdiet semper molestie. Morbi massa odio, condimentum sed ipsum
-                    ac, gravida ultrices erat. Nullam eget dignissim mauris, non tristique erat. Vestibulum ante ipsum
-                    primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
+                <h4>Writeup</h4>
+                <!--<h5>What did you do?</h5>-->
+                <p class="left-align light">We made a python program that captures an image of text in any language and
+                    translates it to
+                    English. The program then displays the captured image overlaid with the translated text. When the
+                    user runs the program, a window of their camera is opened, and the user can press the spacebar to
+                    capture an image of text in any language and save it to the program directory. When the user presses
+                    the spacebar, the camera window is closed, but then the image is opened with the translated text
+                    displayed on it.</p>
+                <!--<h5>How and why did it work?</h5>-->
+                <p class="left-align light">The program uses <a
+                    href="https://opencv-python-tutroals.readthedocs.io/en/latest/">OpenCV</a> to access their camera
+                    and capture the image, a module called <a
+                        href="https://github.com/tesseract-ocr/tesseract">Tesseract</a> to turn the image of text into a
+                    string, and <a href="https://pypi.python.org/pypi/googletrans">Google Translate</a> to determine the
+                    language of the original text (stored in a string) and translate it to English. OpenCV was also used
+                    to display the translated text onto the captured image. It worked because we were able to bring
+                    these three different modules together into one program. We drew from each of their strengths to
+                    seamlessly combine them to make a program that is greater than the simple sum of their parts, a
+                    program that could potentially be very helpful and useful.</p>
+                <!--<h5>What didn't work and why?</h5>-->
+                <p class="left-align light">We also attempted to have the program speak the translated text using <a
+                    href="https://pypi.python.org/pypi/gTTS">Google Text to Speech</a>, which would save the speech as
+                    an mp3 and then play it back for the user while the translated text was being displayed, but it
+                    unreliable and only worked sporadically, so we decided that it was not critical to the program and
+                    reverted back to a more reliable version.</p>
             </div>
         </div>
     </div>
