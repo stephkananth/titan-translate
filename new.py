@@ -27,11 +27,6 @@ while True:
         print("written!".format(img_name))
         img_counter += 1
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> b205cdd9422335dcf111bdcecd9494b623805546
 cam.release()
 
 cv2.destroyAllWindows()
@@ -61,20 +56,13 @@ img = cv2.imread('opencv_frame.png', cv2.IMREAD_COLOR)
 font = cv2.FONT_HERSHEY_SIMPLEX
 cv2.putText(img, display_text, (40, 130), font, 1, (225, 255, 225), 2, cv2.LINE_AA)
 
-<<<<<<< HEAD
-
-cv2.imshow('image',img)
-=======
 cv2.imshow('image', img)
->>>>>>> b205cdd9422335dcf111bdcecd9494b623805546
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 
-
-#SOUND
-from gtts import gTTS
-import os
-tts = gTTS(text=display_text, lang='en')
-tts.save("good.mp3")
-os.system("mpg321 good1.mp3")
-#SOUND
+# SOUND ATTEMPT
+# from gtts import gTTS
+# import os
+# tts = gTTS(text=display_text, lang='en')
+# tts.save("good.mp3")
+# os.system("mpg321 good1.mp3")
